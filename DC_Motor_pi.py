@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 
-PWM_FREQ = 90000
-PIN_MODE = GPIO.BCM
+PWM_FREQ = 500 # hZ
+PIN_MODE = GPIO.BOARD # physical pinout
 
 class DC_Motor:
 
@@ -43,5 +43,5 @@ class DC_Motor:
         self.speed(0)
 
     def __del__(self):
-        pwm_control.stop()
+        self.pwm_control.stop()
         
